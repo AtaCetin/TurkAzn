@@ -1,0 +1,124 @@
+﻿@model TurkAzn.Data.Urun
+<div class="page page-current"><div class="page-content">
+    <div class="block app-header"><img src="static/apps-images/instagram-icon.jpg" alt="Instagram" class="app-header-icon">
+        <div class="app-header-content">
+            <div class="app-header-title">@Model.UrunBaslik</div>
+            <div class="app-header-subtitle"></div>
+            <div class="block app-screenshots"><img src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg" alt="Screenshot" style="opacity: 1; transition-duration: 600ms;"><img src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg" alt="Screenshot" style="opacity: 1; transition-duration: 600ms;"></div>
+            <div class="app-header-actions"><a class="button button-round button-fill" asp-action="Ekle" asp-controller="Sepet" asp-route-id="@Model.UrunID" target="_blank">Satın al</a><a class="link icon-only" href="#"><i class="icon f7-icons">square_arrow_up</i></a></div>
+            <div class="app-header-ratings">
+                <div class="app-header-rating">
+                    <div class="app-header-rating-value">4.8</div>
+                    <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_lefthalf_fill</i></div>
+                    <div class="app-header-rating-sub">930 Ratings</div></div></div></div></div>
+    
+    <div class="block app-description ">
+        <div class="app-description-content">
+            <div class="app-description-text">@Html.Raw(Model.UrunAciklama)</div><a class="link" href="#">more</a></div></div>
+    <div class="block-title appstore-block-title"><span>Ratings &amp; Reviews</span><a class="link" href="#">See All</a></div>
+    <div class="safe-areas-inset app-information-list list no-hairlines no-chevron">
+        <ul>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Provider</div>
+                        <div class="item-after"><span>Instagram, Inc.</span></div></div></div></li>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Size</div>
+                        <div class="item-after"><span>115 MB</span></div></div></div></li>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Compatibility</div>
+                        <div class="item-after"><span>Works on this iPhone</span></div></div></div></li>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Languages</div>
+                        <div class="item-after"><span>English</span></div></div></div></li>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Age Rating</div>
+                        <div class="item-after"><span>12+</span></div></div></div></li>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">In-App Purchases</div>
+                        <div class="item-after"><span>Yes</span></div></div></div></li>
+            <li class="">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Copyright</div>
+                        <div class="item-after"><span>© Instagram, Inc.</span></div></div></div></li>
+            <li class="">
+                <a class="item-link external" href="https://apps.apple.com/developer/id389801255" target="_blank">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">Developer Website</div>
+                            <div class="item-after"><i class="icon f7-icons">compass</i></div></div></div></a></li>
+            <li class="">
+                <a class="item-link external" href="https://apps.apple.com/developer/id389801255" target="_blank">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">Privacy Policy</div>
+                            <div class="item-after"><i class="icon f7-icons">hand_raised_fill</i></div></div></div></a></li></ul></div>
+    <div class="block app-ratings">
+        <div class="app-ratings-number"><b>4.8</b><span>out of 5</span></div>
+        <div class="app-ratings-votes">
+            <div class="app-ratings-votes-row">
+                <div class="app-ratings-votes-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i></div>
+                <div class="app-ratings-votes-progress"><span style="width: 53.7634%;"></span></div></div>
+            <div class="app-ratings-votes-row">
+                <div class="app-ratings-votes-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i></div>
+                <div class="app-ratings-votes-progress"><span style="width: 10.7527%;"></span></div></div>
+            <div class="app-ratings-votes-row">
+                <div class="app-ratings-votes-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i></div>
+                <div class="app-ratings-votes-progress"><span style="width: 8.60215%;"></span></div></div>
+            <div class="app-ratings-votes-row">
+                <div class="app-ratings-votes-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i></div>
+                <div class="app-ratings-votes-progress"><span style="width: 5.37634%;"></span></div></div>
+            <div class="app-ratings-votes-row">
+                <div class="app-ratings-votes-stars"><i class="icon f7-icons">star_fill</i></div>
+                <div class="app-ratings-votes-progress"><span style="width: 21.5054%;"></span></div></div>
+            <div class="app-ratings-votes-total">930 Ratings</div></div></div>
+    <div class="block app-reviews">
+        <div class="app-review">
+            <div class="app-review-header"><span><b>John</b></span><span>2d ago</span></div>
+            <div class="app-review-header">
+                <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i></div><span>johndoe</span></div>
+            <div class="app-review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laborum debitis natus cum quae est rerum cupiditate cumque delectus eaque ipsa, accusamus facilis deleniti consequuntur, aliquam soluta minima, eos exercitationem.</div></div>
+        <div class="app-review">
+            <div class="app-review-header"><span><b>Mike</b></span><span>3d ago</span></div>
+            <div class="app-review-header">
+                <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star</i><i class="icon f7-icons">star</i></div><span>johndoe</span></div>
+            <div class="app-review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat pariatur laudantium, laborum sunt adipisci magni in doloremque neque error earum fugiat! Nihil molestias rem tenetur laboriosam illo similique nobis adipisci?</div></div>
+        <div class="app-review">
+            <div class="app-review-header"><span><b>Vladimir</b></span><span>3d ago</span></div>
+            <div class="app-review-header">
+                <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star</i><i class="icon f7-icons">star</i><i class="icon f7-icons">star</i></div><span>johndoe</span></div>
+            <div class="app-review-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, repudiandae minima? Reprehenderit ab placeat delectus necessitatibus suscipit cumque laborum modi, eaque, a consequuntur, pariatur et itaque. Vitae odio necessitatibus amet.</div></div>
+        <div class="app-review">
+            <div class="app-review-header"><span><b>Karoly</b></span><span>4d ago</span></div>
+            <div class="app-review-header">
+                <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star</i></div><span>johndoe</span></div>
+            <div class="app-review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ab ex! Architecto alias delectus, optio eos nostrum obcaecati repellat distinctio, ab, quam dolores voluptatem ex inventore facere expedita exercitationem repudiandae?</div></div>
+        <div class="app-review">
+            <div class="app-review-header"><span><b>Peter</b></span><span>4d ago</span></div>
+            <div class="app-review-header">
+                <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star_fill</i></div><span>johndoe</span></div>
+            <div class="app-review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illo odit exercitationem eligendi maiores rerum quo, quos ullam quam! Quia facilis consequatur vitae cupiditate molestias maiores odit magnam quo itaque.</div></div>
+        <div class="app-review">
+            <div class="app-review-header"><span><b>Alim</b></span><span>5d ago</span></div>
+            <div class="app-review-header">
+                <div class="rating-stars"><i class="icon f7-icons">star_fill</i><i class="icon f7-icons">star</i><i class="icon f7-icons">star</i><i class="icon f7-icons">star</i><i class="icon f7-icons">star</i></div><span>johndoe</span></div>
+            <div class="app-review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ipsa accusantium qui praesentium, obcaecati quae illum, tempora molestias similique nihil sunt in tempore ipsam laborum illo maxime amet quos consectetur!</div></div></div>
+    <div class="block-title appstore-block-title"><span>What's New</span></div>
+    <div class="block">
+        <p class="display-flex justify-content-space-between" style="opacity: 0.55;"><span>Version 131.0</span><span>Mar 4, 2020</span></p>
+        <p>The latest version contains bug fixes and performance improvements.</p></div>
+    <div class="block-title appstore-block-title"><span>Information</span></div>
+    
+</div></div>

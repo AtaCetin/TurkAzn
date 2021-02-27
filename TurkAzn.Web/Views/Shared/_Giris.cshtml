@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model TurkAzn.Web.Models.Kullanici.GirisViewModel
+@inject SignInManager<TurkAzn.Data.Kimlik.Kullanici> SignInManager
+@inject UserManager<TurkAzn.Data.Kimlik.Kullanici> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+<div class="login-screen">
+    <div class="view view-init">
+        <div class="page" data-name="login">
+            <div class="page-content login-screen-content">
+                <div class="login-screen-title">TurkAzn</div>
+                
+                    <div class="list">
+                        <ul>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <h2>Zaten oturum açtınız</h2>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li><a class="list-button" href="#">Oturum kapat</a></li>
+                        </ul>
+                        <div class="block-footer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p><a class="link login-screen-close" href="#">Bu ekranı kapa</a></p>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+}
+else
+{
+
+    <div class="login-screen">
+        <div class="view view-init">
+            <div class="page" data-name="login">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title">TurkAzn</div>
+                    <form id="girisyap" asp-action="GirisYap" asp-controller="Hesap">
+                        @Html.AntiForgeryToken()
+                        <div class="list">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">E-posta</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" placeholder="E-Postan" data-val="true" data-val-required="Email alanı boş bırakılamaz" id="Email" name="Email" value="">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Şifren</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" placeholder="Şifren" data-val="true" data-val-required="Şifrenizi girmeyi unutmayın" id="Sifre" name="Sifre">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li><a onclick="document.getElementById('girisyap').submit()" class="list-button" href="#">Giriş Yap</a></li>
+                            </ul>
+                            <div class="block-footer">
+                                <p>Bir hesabın yok mu? <a href="/hesap/kayitol">Kayıt ol</a></p>
+                                <p>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div></p>
+                                <p><a class="link login-screen-close" href="#">Bu ekranı kapa</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

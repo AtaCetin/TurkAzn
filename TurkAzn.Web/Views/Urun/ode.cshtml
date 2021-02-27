@@ -1,0 +1,76 @@
+﻿@model System.Collections.Generic.List<TurkAzn.Data.Satis>
+
+
+@if (@ViewBag.Sonuc)
+{
+    <link href="~/css/basarili.css" rel="stylesheet" />
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
+                    <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+                    <span class="swal2-success-line-tip"></span>
+                    <span class="swal2-success-line-long"></span>
+                    <div class="swal2-success-ring"></div>
+                    <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+                    <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row col-md-12">
+            <div class="col text-center">
+               @foreach (var item in Model)
+               {
+                   <h1>@item.SatilanUrun.Urunkisaad Kısa adlı ürünü satın aldınız!</h1>
+               }
+                <hr />
+                <h3 class="text-black-50">Dilerseniz hemen satıcıyla iletişime geçebilir veya durumunu kontrol edebilirsiniz</h3>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    <link href="~/css/basarili.css" rel="stylesheet" />
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
+
+            </div>
+
+        </div>
+        <div class="row col-md-12">
+            <div class="col text-center">
+                <h1>Ödeme sırasında bir hata oluştu</h1>
+                <hr />
+                <h3 class="text-black-50">@ViewBag.Hata</h3>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col text-center">
+               
+            </div>
+        </div>
+    </div>
+}

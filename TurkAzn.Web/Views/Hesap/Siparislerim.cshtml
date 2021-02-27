@@ -1,0 +1,60 @@
+﻿@using TurkAzn.Data
+@model List<TurkAzn.Data.Satis>
+
+
+<div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+        <div class="right"></div>
+        <div class="title text-align-center">Siparişler</div>
+        <div class="left"><a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span>Geri</span>
+        </a></div>
+    </div>
+</div>
+
+
+<div class="page-content tab" >
+
+    <div class="block">
+
+        
+            
+            @if (Model.Count() > 0)
+            {
+                @foreach (Satis item in Model)
+                {
+
+
+                    <div class="card">
+                        <div class="card-header">@item.SatilanUrun.UrunBaslik    @item.SatilanUrun.UrunFiyat ₺ <div class="right"><a href="/hesap/siparisdetay/@item.SatisID">Detay</a></div></div>
+                        <div class="card-content card-content-padding">
+                            @foreach (Durum item2 in item.SatisDurumu)
+                            {
+                                <div>
+                                    @item2.durumIcerik @item2.DurumTarihi
+                                </div>
+                                <br/>
+                            }
+                            
+                        </div>
+                        <div class="card-footer">Miktar: @item.miktar          Satıcı: @item.Satan_Market.kisaAd</div>
+                    </div>
+
+
+
+                }
+            }
+            else
+            {
+                <p>Hiç sipariş vermemişiniz!</p>
+            }
+            
+            
+           
+        
+    
+    
+    </div>
+</div>

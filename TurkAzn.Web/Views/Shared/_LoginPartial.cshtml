@@ -1,0 +1,47 @@
+﻿<div class="login-screen">
+        <div class="view view-init">
+            <div class="page" data-name="login">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title">Sǝbǝt</div>
+                    
+                        <form id="partialGiris" method="post" asp-action="GirisYap" asp-controller="Hesap">
+                    <div class="list">
+                        
+                        <ul>
+                            
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">E-posta</div>
+                                    <div class="item-input-wrap">
+                                        <input type="email" placeholder="E-Posta" name="Email" id="Email" >
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Şifre</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" placeholder="Şifre" id="Sifre" name="Sifre">
+                                    </div>
+                                </div>
+                               
+                            </li>
+                        
+                        </ul>
+                    </div>
+                        <div class="list">
+                            <ul>
+                                <li><input class="button list-button" value="Giriş Yap" type="submit"/></li>
+                            </ul>
+                            <div class="block-footer">
+                                <p>Bir hesabın yok mu? <a href="/hesap/kayitol">Kayıt ol</a></p>
+                                <p>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div></p>
+                                <p><a class="link login-screen-close" href="#">Bu ekranı kapat</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

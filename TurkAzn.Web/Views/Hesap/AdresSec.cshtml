@@ -1,0 +1,33 @@
+﻿@model System.Collections.Generic.List<TurkAzn.Web.Models.AdresGosterVM>
+
+
+<div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+        <div class="title text-align-center">Adres seç</div>
+    </div>
+</div>
+
+
+<div class="page-content tab" >
+
+    <div class="block">
+
+    
+        @foreach (AdresGosterVM item in Model)
+        {
+           
+              
+            <div class="card">
+                <div class="card-header">@item.AdresAd  <a href="/Urun/SatinAl/@item.ID" class="button btn-primary icon  pull-right">Seç</a></div>
+                <div class="card-content card-content-padding">@item.desc</div>
+                <div class="card-footer">@item.Ilce</div>
+            </div>
+                     
+                     
+    
+        }
+        
+    </div>
+</div>
+

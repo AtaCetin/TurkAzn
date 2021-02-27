@@ -1,0 +1,58 @@
+﻿@model TurkAzn.Web.Models.Kullanici.KullaniciBilgileriViewModel
+<div class="page">
+    <div class="page-content">
+        <!-- Static Navbar -->
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Geri</span>
+                    </a>
+                </div>
+                <div class="title">Kullanıcı Bilgilerim</div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="list links-list"><ul>
+                <form asp-controller="Hesap" asp-action="SifreDegistir" method="post" oninput='up2.setCustomValidity(up2.value != Yenisifre.value ? "Şifreler eşleşmiyor." : "")'>
+                     <li class="item-content item-input">
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Eski Şifre:</div>
+                                            <div class="item-input-wrap">
+                                                <input id="suankiSifre" type="password" required name="suankiSifre">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content item-input">
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Şifre:</div>
+                                            <div class="item-input-wrap">
+                                                <input id="Yenisifre" type="password" required name="Yenisifre">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content item-input">
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Şifreyi Doğrula:</div>
+                                            <div class="item-input-wrap">
+                                                <input id="password2" type="password" required name="up2">
+                                            </div>
+                                        </div>
+                                    </li>
+                    <li class="item-content item-input">
+                        <input class="button color-green" value="Değiştir" type="submit"/>
+                    </li>
+                   
+                </form>
+                
+                
+                
+               
+               
+            </ul></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model TurkAzn.Web.Models.Kullanici.KayitViewModel
+
+          <div class="page-content login-screen-content">
+                    <div class="login-screen-title">Kayıt ol</div>
+                    <form id="kayitol" asp-action="KayitOl" asp-controller="Hesap">
+                        <div class="list">
+                            <ul>
+                                @Html.AntiForgeryToken()
+                                <p><div asp-validation-summary="ModelOnly" class="text-align-center" style="color: red;"></div></p>
+
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Ad</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" asp-for="Ad" placeholder="E-Postan">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Soyad</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" asp-for="Soyad" placeholder="E-Postan">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">E-posta</div>
+                                        <div class="item-input-wrap">
+                                            <input type="email" asp-for="Email" placeholder="E-Postan">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Telefon Numarası</div>
+                                        <div class="item-input-wrap">
+                                            <input type="tel" asp-for="TelefonNumarasi" placeholder="Şifren">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Şifre</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" asp-for="Sifre" placeholder="Şifren">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Şifre Tekrarı</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" asp-for="SifreTekrar" placeholder="Şifren">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            
+
+                            <ul>
+                                <li>Kayıt olarak </li>
+                                <li><a href="https://www.iyzico.com/pazaryeri-alici-anlasma/">İyzibazaar Alıcı ödeme hizmeti çerçeve sözleşmesini</a></li>
+                                <li><a href="https://www.iyzico.com/pazaryeri-alici-anlasma/">Buraya bizim sözleşmeyi</a></li>
+                                <li>Kabul ettiğinizi beyan etmiş olursunuz </li>
+                                <li><a onclick="document.getElementById('kayitol').submit()" class="list-button" href="#">Kayıt ol</a></li>
+                            </ul>
+                            <div class="block-footer">
+
+                                <p>Bir hesabın zaten varsa <a href="/hesap/GirisYap">Giriş Yap</a></p>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>

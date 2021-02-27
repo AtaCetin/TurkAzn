@@ -1,0 +1,40 @@
+﻿@model TurkAzn.Web.Models.Kullanici.GirisViewModel
+
+          <div class="page-content login-screen-content">
+                    <div class="login-screen-title">Sǝbǝt</div>
+                    <form id="girisyap" asp-action="GirisYap" asp-controller="Hesap">
+                        <div class="list">
+                            <ul>
+                                @Html.AntiForgeryToken()
+                                <p>
+                                    <div asp-validation-summary="ModelOnly" class="text-align-center" style="color: red;"></div></p>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">E-posta</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" asp-for="Email" placeholder="E-Postan">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Şifren</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" asp-for="Sifre" placeholder="Şifren">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li><a onclick="document.getElementById('girisyap').submit()" class="list-button" href="#">Giriş Yap</a></li>
+                            </ul>
+                            <div class="block-footer">
+                                
+                                <p>Bir hesabın yok mu? <a href="/hesap/kayitol">Kayıt ol</a></p>
+                          
+                            </div>
+                        </div>
+                    </form>
+                </div>

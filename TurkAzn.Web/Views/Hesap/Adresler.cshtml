@@ -1,0 +1,54 @@
+﻿@model List<TurkAzn.Web.Models.AdresGosterVM>
+
+
+
+
+
+
+<div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+        <div class="right"><a href="/hesap/adresekle" class="button list-button">Adres Ekle</a></div>
+        <div class="title text-align-center">Adres seç</div>
+        <div class="left"><a href="#" class="link back">
+                                          <i class="icon icon-back"></i>
+                                          <span>Geri</span>
+                                      </a></div>
+    </div>
+</div>
+
+
+<div class="page-content tab" >
+
+    <div class="block">
+
+        <ul>
+            
+            @if (Model.Count() > 0)
+            {
+                @foreach (AdresGosterVM item in Model)
+                {
+
+
+                    <div class="card">
+                        <div class="card-header">@item.AdresAd </div>
+                        <div class="card-content card-content-padding">@item.desc</div>
+                        <div class="card-footer">@item.Ilce</div>
+                    </div>
+
+
+
+                }
+            }
+            else
+            {
+                <p>Hiç adres eklenmemiş</p>
+            }
+            
+            
+           
+        </ul>
+    
+    
+    </div>
+</div>

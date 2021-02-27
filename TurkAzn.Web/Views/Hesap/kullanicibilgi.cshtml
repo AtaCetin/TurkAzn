@@ -1,0 +1,55 @@
+﻿@model TurkAzn.Web.Models.Kullanici.KullaniciBilgileriViewModel
+<div class="page">
+    <div class="page-content">
+        <!-- Static Navbar -->
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Geri</span>
+                    </a>
+                </div>
+                <div class="title">Kullanıcı Bilgilerim</div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="list links-list"><ul>
+                <li class="item-content item-input">
+                <div class="item-inner">
+                    <div class="item-title item-label">Ad</div>
+                    <div class="item-input-wrap">
+                        <input type="text" asp-for="Ad" placeholder="E-Postan">
+                    </div>
+                </div>
+                </li>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-title item-label">Soyad</div>
+                        <div class="item-input-wrap">
+                            <input type="text" asp-for="Soyad" placeholder="E-Postan">
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-input">
+                <div class="item-inner">
+                    <div class="item-title item-label">E-posta</div>
+                    <div class="item-input-wrap">
+                        <input type="text" asp-for="Email" placeholder="E-Postan">
+                    </div>
+                </div>
+                </li>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-title item-label">Soyad</div>
+                        <div class="item-input-wrap">
+                            <input type="text" asp-for="TelefonNumarasi" placeholder="E-Postan">
+                        </div>
+                    </div>
+                </li>
+            </ul></div>
+        </div>
+    </div>
+</div>

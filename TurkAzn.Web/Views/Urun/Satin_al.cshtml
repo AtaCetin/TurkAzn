@@ -1,0 +1,77 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using TurkAzn.Data
+@using System.Globalization
+@model TurkAzn.Web.Models.SatinAlmaViewModel
+
+
+@if (ViewBag.Java != null)
+{
+
+        @Html.Raw(ViewBag.Java)
+
+        
+    <div id="iyzipay-checkout-form" class="responsive"></div>
+        
+}
+else
+{
+    
+
+
+
+
+<div class="page-content tab" >
+
+    <div class="block">
+        <ul><li class="item-content item-input item-input-outline"><div class="item-inner"><div class="item-title item-floating-label">Bio</div><div class="item-input-wrap"><iframe src="https://www.iyzico.com/pazaryeri-alici-anlasma/" style="height:100%;width:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><span class="input-clear-button"></span></div></div></li></ul>
+        
+        
+        <p>
+            <a class="button button-fill sheet-open" href="#" data-sheet=".my-sheet-swipe-to-step">Sözleşmeleri kabul ediyorum</a>
+        </p>
+
+        
+
+                            </div>
+                        </div>
+
+
+
+
+
+<div class="sheet-modal my-sheet-swipe-to-step" style="height:auto; --f7-sheet-bg-color: #333;">
+    <div class="sheet-modal-inner">
+      <div class="sheet-modal-swipe-step">
+        <div class="display-flex padding justify-content-space-between align-items-center">
+          <div style="font-size: 18px"><b>Toplam </b></div>
+          <div style="font-size: 22px"><b>@(Model.GelenSepet.ShoppingCartTotal.ToString("c", CultureInfo.CreateSpecificCulture("tr-TR"))) ₺</b></div>
+        </div>
+          <div class="padding-horizontal padding-bottom">
+              <form asp-controller="Urun" asp-action="Satin_al" method="post">
+              	 <input name="id" id="id" value="@Model.SecilenAdres.adresID" hidden="hidden" />
+                   <button type="submit" class="button button-large button-fill">Satın Al</button>
+               </form>
+              <div class="margin-top text-align-center">Detaylar için yukarı kaydırın</div>
+              
+          </div>
+      </div>
+      <div class="block-title block-title-medium margin-top">Siparişiniz:</div>
+      <div class="list no-hairlines">
+          <ul>
+               @if(Model.GelenSepet !=null)
+              	                {
+              	                foreach (var item in Model.GelenSepet.ShoppingCart.ShoppingCartItems)
+                                     {
+                                         <li class="item-content">
+                                             <div class="item-inner">
+                                                 <div class="item-title">@item.Urun.Urunkisaad</div>
+                                                 <div class="item-after text-color-black"><b>@item.Urun.UrunFiyat.ToString("#.##") ₺</b></div>
+                                             </div>
+                                         </li>
+                                     }
+              }
+          </ul>
+      </div>
+    </div>
+  </div>
+}

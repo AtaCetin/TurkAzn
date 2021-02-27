@@ -1,0 +1,78 @@
+﻿@model TurkAzn.Data.Satis
+
+@using TurkAzn.Data
+
+
+
+<div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+        <div class="right"></div>
+        <div class="title text-align-center">Sipariş @Model.AlinmaTarihi</div>
+        <div class="left"><a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span>Geri</span>
+        </a></div>
+    </div>
+</div>
+
+
+<div class="page-content tab" >
+
+    <div class="block">
+
+        <h1>Sipariş Detayı</h1>
+        <h2>Sipariş numarası: @Model.SepetID</h2>
+        <button class="button color-red">Çözüm merkezi</button>
+        <a href="/urun/goster/@Model.SatilanUrun.UrunSahibi.kisaAd/@Model.SatilanUrun.Urunkisaad" class="button color-yellow">Tekrar al</a>
+
+        
+        <div class="card">
+                    <div class="card-header">Kargo durumu </div>
+            <div class="card-content card-content-padding">
+                @if (Model.KargoYollandimi)
+                {
+                    <p> Kargonuz @Model.KargoNum takip kodlu @Model.YollananKargoSirketi.Adi tarafından gönderildi </p>
+                }
+                else
+                {
+                    <p>Kargonuz daha gönderilmemiştir </p>
+                }
+                                    
+            </div>
+            @{
+                DateTime songun = Model.AlinmaTarihi.AddDays(7);
+                var kalanzaman = songun.Subtract(DateTime.Now);
+            }
+                    <div class="card-footer">Kalan gün : @kalanzaman.Days Saat: @kalanzaman.Hours Dakika: @kalanzaman.Minutes</div>
+                </div>
+        
+        
+        
+        
+        
+        <div class="card">
+            <div class="card-header">@Model.SatilanUrun.UrunBaslik <div class="right">  @Model.SatilanUrun.UrunFiyat ₺</div></div>
+            <div class="card-content card-content-padding">
+                @foreach (Durum item2 in Model.SatisDurumu)
+                {
+                    <div>
+                        @item2.durumIcerik @item2.DurumTarihi
+                    </div>
+                    <br/>
+                }
+                            
+            </div>
+            <div class="card-footer">Miktar: @Model.miktar          Satıcı: @Model.Satan_Market.kisaAd</div>
+        </div>
+
+        <h2>Adres</h2>
+        <p>@Model.verilenAdres.namesurname</p>
+        <p>@Model.verilenAdres.description</p>
+        <p>@Model.verilenAdres.city</p> <p>@Model.verilenAdres.ilce</p>
+        <p>@Model.verilenAdres.zipcode</p>
+        
+
+    </div>
+</div>
+

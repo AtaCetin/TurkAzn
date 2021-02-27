@@ -1,0 +1,143 @@
+﻿@model TurkAzn.Web.Models.SepetIndexModel
+@using System.Globalization
+
+
+<div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+        <div class="title text-align-center">Sepetim</div>
+    </div>
+</div>
+
+<style>
+    .table>tbody>tr>td, .table>tfoot>tr>td{
+        vertical-align: middle;
+    }
+    @@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+        width:20%;
+        display: inline !important;
+    }
+    .actions .btn{
+        width:36%;
+        margin:1.5em 0;
+    }
+	
+    .actions .btn-info{
+        float:left;
+    }
+    .actions .btn-danger{
+        float:right;
+    }
+	
+    table#cart thead { display: none; }
+    table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+    table#cart tbody tr td:first-child { background: #333; color: #fff; }
+    table#cart tbody td:before {
+        content: attr(data-th); font-weight: bold;
+        display: inline-block; width: 8rem;
+    }
+	
+	
+	
+    table#cart tfoot td{display:block; }
+    table#cart tfoot td .btn{display:block;}
+	
+    }
+
+</style>
+
+
+
+<div class="page-content tab">
+
+    <div class="block">
+        <div class="container">
+            
+            @if (ViewBag.InvalidAmountText != null)
+            {
+                <div>
+                    <p class="invalidAmount">@ViewBag.InvalidAmountText</p>
+                </div>
+            }
+            
+
+            <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th style="width: 50%">Ürün</th>
+                    <th style="width: 10%">Fiyat</th>
+                    <th style="width: 8%">Miktar</th>
+                    <th style="width: 22%" class="text-center">Ara Toplam</th>
+                    <th style="width: 10%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <div class="block">
+                            <div class="list links-list">
+                @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+                {
+                    
+                     <tr>
+                         <td data-th="Product">
+                             <div class="row">
+                                 <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+                                 <div class="col-sm-10">
+                                     <h4 class="nomargin"><a asp-controller="Urun" asp-action="urunGoster" asp-route-id="@line.Urun.UrunID">@line.Urun.UrunBaslik</a></h4>
+                                     <p>@line.Urun.kisaTanitim</p>
+                                 </div>
+                             </div>
+                         </td>
+                        
+                         <td data-th="Price">@line.Urun.UrunFiyat.ToString("c", CultureInfo.CreateSpecificCulture("tr-TR"))</td>
+                         
+                         
+                         <td data-th="Quantity">
+                             @{
+                                 string amountid = "amount" + line.Urun.UrunID;
+                                 
+                             <div class="stepper stepper-fill stepper-init" data-wraps="true" data-autorepeat="true"
+                                  data-autorepeat-dynamic="true">
+                             <div class="stepper-button-minus"></div>
+                             <div class="stepper-input-wrap">
+                                 <input name="amount" id="@amountid" value="@line.Amount" type="text"  min="0" max="10" step="1" readonly />
+                             </div>
+                             <div class="stepper-button-plus"></div>
+                             </div>
+                                                                                                                              
+                             }
+                         </td>
+                         <td data-th="Subtotal" class="text-center">@((line.Amount * line.Urun.UrunFiyat).ToString("c", CultureInfo.CreateSpecificCulture("tr-TR")))</td>
+                         <td class="actions" data-th="">
+                             <a class="button button-small color-green yenileSepet"><i id="@line.Urun.UrunID" class="icon f7-icons">arrow_2_circlepath_circle</i></a>
+                             <a asp-controller="Sepet" asp-action="kaldir" asp-route-urunID="@line.Urun.UrunID" class="button button-small color-red"><i class="icon f7-icons">trash</i></a>
+                         </td>
+                          
+                     </tr>
+                     
+                }
+                            </div>
+                                    </div>
+                </tbody>
+                <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Toplam @(Model.ShoppingCartTotal.ToString("c", CultureInfo.CreateSpecificCulture("tr-TR")))</strong></td>
+                </tr>
+                <tr>
+                    <td><a asp-action="Index" asp-controller="Anasayfa" class="button button-fill color-red"><i class="icon f7-icons">square_arrow_right</i> Alışverişe devam et</a></td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong></strong></td>
+                    
+                @if (Model.ShoppingCart.ShoppingCartItems.Count() != 0)
+                {
+                    <td><a asp-controller="Hesap" asp-action="AdresSec" class="button button-fill color-green">Satın al <i class="fa fa-angle-right"></i></a></td>
+                }
+                else
+                {
+                    <p>Sepetinizde ürün bulunmamaktadır. </p>
+                }
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+

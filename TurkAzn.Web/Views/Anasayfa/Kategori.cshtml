@@ -1,0 +1,65 @@
+﻿@model List<TurkAzn.Data.Kategori>
+@{
+    ViewData["Title"] = "Kategori";
+}
+
+<div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+        <form class="searchbar">
+            <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                    <input type="search" placeholder="Ürün veya kategori ara">
+                    <i class="searchbar-icon"></i>
+                    <span class="input-clear-button"></span>
+                </div>
+                <span class="searchbar-disable-button if-not-aurora">Cancel</span>
+            </div>
+        </form>
+        <a href="#" class="button button-small panel-toggle display-flex">
+            <i class="f7-icons">bell</i>
+        </a>
+
+    </div>
+</div>
+
+
+
+<div class="page-content tab" >
+
+    <div class="block">
+        
+        
+
+        <div class="block-title"><h1>@ViewData["Title"]</h1></div>
+        <div class="list accordion-list">
+          <ul>
+           @foreach (var item in Model)
+           {
+               <li class="accordion-item"><a href="#" class="item-content item-link">
+                       <div class="item-inner">
+                           <div class="item-title">@item.KategoriAd</div>
+                       </div></a>
+                   <div class="accordion-item-content">
+                       <div class="block">
+                           <div class="row">
+                               @foreach (var item2 in item.KategorininAlt)
+                               {
+                                   <div class="col">
+                                       <div class="elevation-6">@item2.KategoriAd</div>
+                                   </div>
+                               }
+                               
+                           </div>
+                       </div>
+                   </div>
+               </li>
+               
+               
+           }
+           
+          </ul>
+        </div>
+    </div>
+</div>
+
